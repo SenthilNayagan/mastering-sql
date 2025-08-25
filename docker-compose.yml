@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: mastering-sql-postgres
+    environment:
+      POSTGRES_DB: mastering_sql
+      POSTGRES_USER: sql_learner
+      POSTGRES_PASSWORD: learning123
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data  # Data files
+      - ./exercises:/exercises  # SQL scripts for practice
+      - ./initial-scripts:/docker-entrypoint-initdb.d # Run initial scripts once
