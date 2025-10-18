@@ -75,6 +75,8 @@ Start the database:
 docker-compose up -d
 ```
 
+Note: The `-d` flag stands for "detached mode." When we run the command with this flag, Docker Compose will start the containers specified in the docker-compose.yml file in the background and keep them running, allowing us to continue using the terminal for other commands while the containers run.
+
 This will:
 - Launch PostgreSQL server.
 - Execute any SQL scripts in `initial-scripts/` **once** during the first run.
@@ -149,7 +151,7 @@ mastering-sql/
 │   └── 01-basic-queries/       # Basic SQL exercises
 │       └── basic-queries.sql   # Example SQL script
 ├── initial-scripts/             # Scripts to run once at first startup
-│   └── setup.sql                # Initial setup scripts
+│   └── 01-create-sample-database.sql                # Initial setup scripts
 └── docker-compose.yml           # Docker configuration for PostgreSQL
 └── README.md                    # This file
 ```
